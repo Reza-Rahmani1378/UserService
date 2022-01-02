@@ -1,4 +1,4 @@
-package ir.bontec.ProgrammingChallenge;
+package ir.bontec.programmingchallenge;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

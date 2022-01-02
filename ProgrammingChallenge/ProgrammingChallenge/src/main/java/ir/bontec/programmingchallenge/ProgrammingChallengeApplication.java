@@ -1,4 +1,4 @@
-package ir.bontec.ProgrammingChallenge;
+package ir.bontec.programmingchallenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
