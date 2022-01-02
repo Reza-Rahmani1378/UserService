@@ -1,15 +1,14 @@
 package ir.bontec.programmingchallenge.entities;
 
 import ir.bontec.programmingchallenge.base.BaseEntity;
+import ir.bontec.programmingchallenge.entities.enumeration.UserType;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Inheritance
-@Table
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = User.TABLE_NAME)
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,5 +16,17 @@ import javax.persistence.Table;
 @Builder
 public class User extends BaseEntity<Long> {
 
-    private static final String TABLE_NAME = "user_table";
+    public static final String TABLE_NAME = "user_table";
+    private static final String USERTYPE = "user_type";
+
+    @Column(unique = true, nullable = false)
+    private String username;
+
+    @Column(nullable = false)
+    private String encryptedPassword;
+
+    @Column(name = User.USERTYPE)
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
+
 }
